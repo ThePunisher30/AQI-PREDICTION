@@ -1,0 +1,55 @@
+# AQI Prediction Project Configuration
+
+locations:
+  # Clean air (PM2.5 < 60)
+  Shillong:    [25.5788, 91.8933]   # Meghalaya
+  Kohima:      [25.6751, 94.1086]   # Nagaland
+  Mysuru:      [12.2958, 76.6394]   # Karnataka
+  Gangtok:     [27.3389, 88.6065]   # Sikkim
+  # Moderate (PM2.5 60-100)
+  Raipur:      [21.2514, 81.6296]   # Chhattisgarh
+  Varanasi:    [25.3176, 82.9739]   # UP
+  Vijayawada:  [16.5062, 80.6480]   # Andhra Pradesh
+  Lucknow:     [26.8467, 80.9462]   # UP
+  Bangalore:   [12.9716, 77.5946]   # Karnataka
+  Amritsar:    [31.6340, 74.8723]   # Punjab
+  Jodhpur:     [26.2389, 73.0243]   # Rajasthan
+  Ahmedabad:   [23.0225, 72.5714]   # Gujarat
+  Guwahati:    [26.1445, 91.7362]   # Assam
+  Mumbai:      [19.0760, 72.8777]   # Maharashtra
+  Chennai:     [13.0827, 80.2707]   # Tamil Nadu
+  Kanpur:      [26.4499, 80.3319]   # UP
+  Agra:        [27.1767, 78.0081]   # UP
+  Chandigarh:  [30.7333, 76.7794]   # Chandigarh
+  Hyderabad:   [17.3850, 78.4867]   # Telangana
+  # Polluted (PM2.5 > 100)
+  Surat:       [21.1702, 72.8311]   # Gujarat
+  Bhopal:      [23.2599, 77.4126]   # MP
+  Nagpur:      [21.1458, 79.0882]   # Maharashtra
+  Jaipur:      [26.9124, 75.7873]   # Rajasthan
+  Indore:      [22.7196, 75.8577]   # MP
+  Bhubaneswar: [20.2961, 85.8245]   # Odisha
+  Kolkata:     [22.5726, 88.3639]   # West Bengal
+  Pune:        [18.5204, 73.8567]   # Maharashtra
+  Agartala:    [23.8315, 91.2868]   # Tripura
+  Delhi:       [28.6139, 77.2090]   # Delhi
+
+target_pollutants:
+  - pm2_5
+  - pm10
+
+data:
+  freq: "1h"
+  lookback_hours: 24
+  forecast_horizons: [1, 6, 12, 24]
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+graph:
+  distance_threshold_km: 1500
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+  graph_data: "data/graphs"
